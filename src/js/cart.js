@@ -7,8 +7,7 @@ function getLocalStorage(key) {
 function getCartContents() {
   let markup = "";
   const cartItems = getLocalStorage("so-cart");
-  console.log(cartItems);
-  if (cartItems.length > 0) {
+  if (cartItems !== null && cartItems.length > 0) {
     const htmlItems = cartItems.map((item) => renderCartItem(item));
     document.querySelector(".product-list").innerHTML = htmlItems.join("");
 
